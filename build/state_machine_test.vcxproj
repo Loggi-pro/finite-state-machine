@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\lib\unity\unity.cpp" />
+    <ClCompile Include="..\lib\unity\unity_assertion.cpp" />
+    <ClCompile Include="..\lib\unity\unity_fixture.cpp" />
+    <ClCompile Include="..\test\state_machine_test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\lib\unity\unity.h" />
+    <ClInclude Include="..\lib\unity\unity_assertion.h" />
+    <ClInclude Include="..\lib\unity\unity_exception.h" />
+    <ClInclude Include="..\lib\unity\unity_fixture.h" />
+    <ClInclude Include="..\lib\unity\unity_fixture_classes.h" />
+    <ClInclude Include="..\lib\unity\unity_fixture_internals.h" />
+    <ClInclude Include="..\lib\unity\unity_fixture_malloc_overrides.h" />
+    <ClInclude Include="..\lib\unity\unity_internals.h" />
+    <ClInclude Include="..\src\event_queue.h" />
+    <ClInclude Include="..\src\examples\deffered_event.h" />
+    <ClInclude Include="..\src\examples\fsm_parser.h" />
+    <ClInclude Include="..\src\examples\hsm_example.h" />
+    <ClInclude Include="..\src\examples\hsm_parser.h" />
+    <ClInclude Include="..\src\examples\kitchen_timer.h" />
+    <ClInclude Include="..\src\examples\orthogonal.h" />
+    <ClInclude Include="..\src\examples\reminder.h" />
+    <ClInclude Include="..\src\examples\transition_to_history.h" />
+    <ClInclude Include="..\src\examples\ultimate_hook.h" />
+    <ClInclude Include="..\src\fsm\fsm.h" />
+    <ClInclude Include="..\src\fsm\fsm_types.h" />
+    <ClInclude Include="..\src\fsm\hsm.h" />
+    <ClInclude Include="..\src\naive\dumb_state_machine.h" />
+    <ClInclude Include="..\src\naive\state_pattern_machine.h" />
+    <ClInclude Include="..\src\naive\table_state_machine.h" />
+    <ClInclude Include="..\test\examples\test_dumb_parser.h" />
+    <ClInclude Include="..\test\examples\test_fsm_parser.h" />
+    <ClInclude Include="..\test\examples\test_hsm_parser.h" />
+    <ClInclude Include="..\test\examples\test_kitchen_timer.h" />
+    <ClInclude Include="..\test\examples\test_pattern_parser.h" />
+    <ClInclude Include="..\test\examples\test_table_parser.h" />
+    <ClInclude Include="..\test\patterns\test_deffered_event.h" />
+    <ClInclude Include="..\test\patterns\test_orthogonal.h" />
+    <ClInclude Include="..\test\patterns\test_reminder.h" />
+    <ClInclude Include="..\test\patterns\test_transition_to_history.h" />
+    <ClInclude Include="..\test\patterns\test_ultimate_hook.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{0fad86db-e0db-4a01-b0ac-46985b365f7e}</ProjectGuid>
+    <RootNamespace>statemachinetest</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)..\bin\$(Configuration)\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)..\bin\$(Configuration)\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_UNITY;_DEBUG;_CONSOLE;PLATFORM=WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\test;$(SolutionDir)..\src;$(SolutionDir)..\lib;$(CPH_LIB)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ForcedIncludeFiles>void/platform_specific.h</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_UNITY;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\test;$(SolutionDir)..\src;$(SolutionDir)..\lib;$(CPH_LIB)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ForcedIncludeFiles>void/platform_specific.h</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

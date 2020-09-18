@@ -1,0 +1,5 @@
+.*/
+bin/
+build/obj/
+build/makefile
+build/calltree.txt

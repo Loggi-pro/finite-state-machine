@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <MakefileCreate>call "$(AVR32_HOME)\vsavr\bin\MakefileCreator.exe" -pr=$(MSBuildProjectFullPath) -out="$(OutDir)" -obj="$(IntDir)" -mcu=$(MCU) -fcpu=$(F_CPU) -cfg=$(Configuration) -dude=$(AVR_DUDE_PATH)  -i=$(NMakeIncludeSearchPath) --project_name="$(ProjectName)"  -fi="$(NMakeForcedIncludes)" --c_std=$(C_STD) /noecho /nologo</MakefileCreate>
+    <HeaderCreate>call "$(AVR32_HOME)\vsavr\bin\AVRHeader.exe" -fcpu=$(F_CPU) -mcu=$(MCU) -out="$(SolutionDir)..\src" --_AVR</HeaderCreate>
+    <Size>call python $(AVR32_HOME)/vsavr/bin/avr_gen_size.py --size=avr-size.exe --mcu=$(MCU) --elf=${OUTPUT_DIR}/${elf_file} --ezstack=${VSAVR}/vsavr/bin/ezstack.exe</Size>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NMakeBuildCommandLine>$(HeaderCreate)
+$(MakefileCreate)
+make all 2&gt;&amp;1 | "$(AVR32_HOME)\vsavr\bin\GccFilter.exe"
+</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>$(HeaderCreate)
+$(MakeFileCreate)
+make clean all 2&gt;&amp;1 | "$(AVR32_HOME)\vsavr\bin\GccFilter.exe"
+</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>make clean
+</NMakeCleanCommandLine>
+    <NMakeOutput>$(MSBuildProjectName).hex</NMakeOutput>
+    <NMakePreprocessorDefinitions>$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(AVR32_HOME)\avr\include;</NMakeIncludeSearchPath>
+    <IncludePath>$(ProjectDir);$(SolutionDir)..\src;$(SolutionDir)..\lib;$(CPH_LIB)\stdincludes;$(CPH_LIB)</IncludePath>
+    <NMakeAssemblySearchPath>$(NMakeAssemblySearchPath)</NMakeAssemblySearchPath>
+    <NMakeForcedIncludes>$(NMakeForcedIncludes)</NMakeForcedIncludes>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <BuildLog>
+      <Path>$(IntDir)log\$(ProjectName)$(Configuration).log</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="MakefileCreate">
+      <Value>$(MakefileCreate)</Value>
+    </BuildMacro>
+    <BuildMacro Include="HeaderCreate">
+      <Value>$(HeaderCreate)</Value>
+    </BuildMacro>
+    <BuildMacro Include="Size">
+      <Value>$(Size)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

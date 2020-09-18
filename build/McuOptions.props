@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <Version>0.9.0.0</Version>
+    <F_CPU>16000000UL</F_CPU>
+    <MCU>atmega168p</MCU>
+    <C_STD>17</C_STD>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NMakeIncludeSearchPath>$(SolutionDir)..\src;$(SolutionDir)lib;$(CPH_LIB);$(CPH_LIB)\stdincludes</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(SolutionDir)..\src\_avr_defs.h;void\platform_specific.h</NMakeForcedIncludes>
+    <OutDir>$(SolutionDir)..\bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\obj\$(Configuration)</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>AVR_PC;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="Version">
+      <Value>$(Version)</Value>
+    </BuildMacro>
+    <BuildMacro Include="F_CPU">
+      <Value>$(F_CPU)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="MCU">
+      <Value>$(MCU)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="C_STD">
+      <Value>$(C_STD)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
