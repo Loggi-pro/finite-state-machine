@@ -28,6 +28,7 @@
     <ClInclude Include="..\src\event_queue.h" />
     <ClInclude Include="..\src\examples\deffered_event.h" />
     <ClInclude Include="..\src\examples\fsm_parser.h" />
+    <ClInclude Include="..\src\examples\fsm_static_parser.h" />
     <ClInclude Include="..\src\examples\hsm_example.h" />
     <ClInclude Include="..\src\examples\hsm_parser.h" />
     <ClInclude Include="..\src\examples\kitchen_timer.h" />
@@ -52,6 +53,7 @@
     <ClInclude Include="..\test\patterns\test_reminder.h" />
     <ClInclude Include="..\test\patterns\test_transition_to_history.h" />
     <ClInclude Include="..\test\patterns\test_ultimate_hook.h" />
+    <ClInclude Include="test_static_fsm_parser.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -102,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_UNITY;_DEBUG;_CONSOLE;PLATFORM=WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\test;$(SolutionDir)..\src;$(SolutionDir)..\lib;$(CPH_LIB)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\test;$(SolutionDir)..\src;$(SolutionDir)..\lib;$(LIB)\void</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ForcedIncludeFiles>void/platform_specific.h</ForcedIncludeFiles>
     </ClCompile>
@@ -119,7 +121,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_UNITY;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\test;$(SolutionDir)..\src;$(SolutionDir)..\lib;$(CPH_LIB)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\test;$(SolutionDir)..\src;$(SolutionDir)..\lib;$(LIB)\void</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ForcedIncludeFiles>void/platform_specific.h</ForcedIncludeFiles>
     </ClCompile>

@@ -152,5 +152,11 @@
     <ClInclude Include="..\src\naive\table_state_machine.h">
       <Filter>StateMachine</Filter>
     </ClInclude>
+    <ClInclude Include="test_static_fsm_parser.h">
+      <Filter>Tests\Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\examples\fsm_static_parser.h">
+      <Filter>StateMachine\examples</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -19,7 +19,7 @@ make clean all 2&gt;&amp;1 | "$(AVR32_HOME)\vsavr\bin\GccFilter.exe"
 </NMakeCleanCommandLine>
     <NMakeOutput>$(MSBuildProjectName).hex</NMakeOutput>
     <NMakePreprocessorDefinitions>$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
-    <NMakeIncludeSearchPath>$(AVR32_HOME)\avr\include;</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath>$(AVR32_HOME)\avr\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
     <IncludePath>$(ProjectDir);$(SolutionDir)..\src;$(SolutionDir)..\lib;$(CPH_LIB)\stdincludes;$(CPH_LIB)</IncludePath>
     <NMakeAssemblySearchPath>$(NMakeAssemblySearchPath)</NMakeAssemblySearchPath>
     <NMakeForcedIncludes>$(NMakeForcedIncludes)</NMakeForcedIncludes>
