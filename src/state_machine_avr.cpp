@@ -6,20 +6,13 @@
 #include "examples/fsm_parser.h"
 #include "examples/fsm_static_parser.h"
 #include <void/variant.h>
+#include <void/tuple.h>
 VOID_ISR(CPH_INT_TIMER0_OCRA) {
 	cph::Private::timer0::THwTimer0::IntOCRA_Handler();
 }
 namespace std {
 	ostream cout;
 }
-
-struct Obj {
-	int a;
-	int b;
-};
-
-
-vd::variant<int, Obj> v{1};
 
 int main() {
 	cph::SystemCounter::initPrecision<TIMER_CONFIG>();
@@ -44,10 +37,6 @@ int main() {
 	parser.dispatch(event_slash{}); //5
 	parser.dispatch(event_star{});//close 6
 	parser.dispatch(event_slash{}); //7
-	vd::visit(vd::overloaded{
-		[&](int&) {},
-		[&](auto&) {}
-	}, v);
 
 	while (true) {
 	}

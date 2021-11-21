@@ -8,6 +8,7 @@ This implementation is based on the book _"Practical Statecharts in C/C++: Quant
 
 - **/naive** - naive (not optimal) different FSM implementations, presented for education purpose only;
 - **/fsm** - library source code;
+- **/static_fsm** - fsm implemented by variants;
 - **/examples** - some examples and FSM\HSM patterns.
 
 ## Files:
