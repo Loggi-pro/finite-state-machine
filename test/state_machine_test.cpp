@@ -4,6 +4,7 @@
 #include "examples/test_pattern_parser.h"
 #include "examples/test_fsm_parser.h"
 #include "examples/test_static_fsm_parser.h"
+#include "examples/test_sml_parser.h"
 #include "examples/test_hsm_parser.h"
 #include "examples/test_kitchen_timer.h"
 #include "patterns/test_deffered_event.h"
@@ -23,6 +24,7 @@ static void RunAllTests(void) {
 	RUN_TEST_GROUP_CLASS(TestPatternParser);
 	RUN_TEST_GROUP_CLASS(TestFsmParser);
 	RUN_TEST_GROUP_CLASS(TestStaticFsmParser);
+	RUN_TEST_GROUP_CLASS(TestSmlParser);
 	RUN_TEST_GROUP_CLASS(TestHsmParser);
 	RUN_TEST_GROUP_CLASS(TestDefferedEventHsm);
 	RUN_TEST_GROUP_CLASS(TestReminderHsm);

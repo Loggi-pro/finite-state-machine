@@ -37,8 +37,10 @@ class OptimalParserFsm : public fsm::Fsm {
 				break;
 
 			case SIG_CHAR:
-			case SIG_SLASH:
 				transition(&OptimalParserFsm::code);
+				break;
+
+			case SIG_SLASH:
 				break;
 			}
 		}

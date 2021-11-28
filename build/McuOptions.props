@@ -8,7 +8,7 @@
     <C_STD>17</C_STD>
   </PropertyGroup>
   <PropertyGroup>
-    <NMakeIncludeSearchPath>$(SolutionDir)..\src;$(LIB)\void;$(LIB)\cph-library;$(LIB);$(LIB)\stdincludes</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath>$(SolutionDir)..\src;$(SolutionDir)..\lib;$(LIB)\void;$(LIB)\cph-library;$(LIB);$(LIB)\stdincludes</NMakeIncludeSearchPath>
     <NMakeForcedIncludes>$(SolutionDir)..\src\_avr_defs.h;void\platform_specific.h</NMakeForcedIncludes>
     <OutDir>$(SolutionDir)..\bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\obj\$(Configuration)</IntDir>

@@ -45,6 +45,9 @@
     <ClCompile Include="..\lib\unity\unity_fixture.cpp">
       <Filter>Unity</Filter>
     </ClCompile>
+    <ClCompile Include="..\test\examples\test_sml_parser.h">
+      <Filter>Tests\Examples</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\lib\unity\unity.h">
@@ -160,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="..\test\examples\test_static_fsm_parser.h">
       <Filter>Tests\Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\examples\sml_parser.h">
+      <Filter>StateMachine\examples</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

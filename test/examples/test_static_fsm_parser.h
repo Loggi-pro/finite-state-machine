@@ -3,7 +3,7 @@
 #include "examples/fsm_static_parser.h"
 
 class TestStaticFsmParser : UnityTestClass<TestStaticFsmParser> {
-		static inline StaticParserFsm parser = StaticParserFsm{};
+		static inline fsm_static_parser::StaticParserFsm parser = fsm_static_parser::StaticParserFsm{};
 	public:
 		static void setup() {
 			parser.init();
@@ -13,6 +13,7 @@ class TestStaticFsmParser : UnityTestClass<TestStaticFsmParser> {
 
 
 		static void newTest() {
+			using namespace fsm_static_parser;
 			//parser.dispatch(event_char{});
 			parser.dispatch(event_slash{}); //open 1
 			parser.dispatch(event_star{});//2

@@ -69,6 +69,29 @@ Cons:
 - not practically reusable: transition methods move to general class;
 - not effectively portable: this method uses virtual functions, which may not be available on some platforms (embedded).
 
+## Implementation based on variants
+
+File: **static_fsm/fsm.h**
+
+Pros:
+
+- no enumerating;
+- every new state is partitioned (separated in classes), logic localized in separate classes;
+- good optimization
+
+Cons:
+
+- don't allow customization of a signature for each event handler;
+- has moderate dispatching time: there is only one switch.
+
+File: **lib/sml.h**
+
+Pros:
+
+- no enumerating;
+- every new state is partitioned (separated in classes), logic localized in separate classes;
+- maximum optimization
+
 # Finite state machine
 
 ## Basic concepts

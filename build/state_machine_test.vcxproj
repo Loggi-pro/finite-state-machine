@@ -14,6 +14,7 @@
     <ClCompile Include="..\lib\unity\unity.cpp" />
     <ClCompile Include="..\lib\unity\unity_assertion.cpp" />
     <ClCompile Include="..\lib\unity\unity_fixture.cpp" />
+    <ClCompile Include="..\test\examples\test_sml_parser.h" />
     <ClCompile Include="..\test\state_machine_test.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -34,6 +35,7 @@
     <ClInclude Include="..\src\examples\kitchen_timer.h" />
     <ClInclude Include="..\src\examples\orthogonal.h" />
     <ClInclude Include="..\src\examples\reminder.h" />
+    <ClInclude Include="..\src\examples\sml_parser.h" />
     <ClInclude Include="..\src\examples\transition_to_history.h" />
     <ClInclude Include="..\src\examples\ultimate_hook.h" />
     <ClInclude Include="..\src\fsm\fsm.h" />

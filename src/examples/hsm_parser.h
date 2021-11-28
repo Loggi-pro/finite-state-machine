@@ -37,7 +37,7 @@ class HsmParser : public hsm::Hsm {
 		}
 		/**/hsm::EventResult code_slash(const hsm::Event& e) {  //state handler
 			switch (e.sig) {
-			case SIG_SLASH: return eventTransition(&HsmParser::code);
+			case SIG_SLASH: return eventHandled();
 
 			case SIG_STAR: return eventTransition(&HsmParser::comment);
 
